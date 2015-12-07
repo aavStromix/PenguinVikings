@@ -12,7 +12,7 @@ public class SnowBallLifecycle : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnCollisionEnter2D(Collision2D myCollision)
+	void OnCollisionStay2D(Collision2D myCollision)
 	{
 		if (!myCollision.gameObject.tag.Equals("Player"))
 			Destroy(gameObject);

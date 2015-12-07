@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SnowBallLifecycle : MonoBehaviour {
 
+	public ParticleSystem snowFlash;
 	// Use this for initialization
 	void Start () {
 		Destroy(gameObject, 2);
@@ -15,6 +16,16 @@ public class SnowBallLifecycle : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D myCollision)
 	{
 		if (!myCollision.gameObject.tag.Equals("Player"))
+		{
+
+			ParticleSystem flash = Instantiate(snowFlash) 
+				as ParticleSystem;
+			flash.transform.position = transform.position;
+			flash.Play();
+
+			Destroy(flash.gameObject, 2);
+
 			Destroy(gameObject);
+		}
 	}
 }

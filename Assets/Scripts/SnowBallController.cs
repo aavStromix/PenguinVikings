@@ -4,7 +4,7 @@ using System.Collections;
 public class SnowBallController : MonoBehaviour {
 
 	public Rigidbody2D snowball;				// Prefab of the rocket.
-	public float speed = 30f;
+	private float speed = 1000f;
 
 	private PlayerController playerCtrl;
 	private Animator anim;
